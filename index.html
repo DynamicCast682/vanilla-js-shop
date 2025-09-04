@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Интернет-магазин</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <h1 class="logo"><a href="/">Магазин</a></h1>
+        <nav class="nav">
+          <div id="authSection" class="auth-section">
+            <span id="userWelcome" class="user-welcome hidden"></span>
+            <button id="loginBtn" class="btn btn-secondary">Войти</button>
+            <button id="logoutBtn" class="btn btn-secondary hidden">
+              Выйти
+            </button>
+          </div>
+          <button id="cartBtn" class="btn btn-primary">
+            Корзина (<span id="cartCount">0</span>)
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        <div id="loginScreen" class="screen hidden">
+          <div class="form-container">
+            <h2>Вход</h2>
+            <form id="loginForm">
+              <div class="form-group">
+                <label for="loginEmail">Email:</label>
+                <input type="email" id="loginEmail" required />
+              </div>
+              <div class="form-group">
+                <label for="loginPassword">Пароль:</label>
+                <input type="password" id="loginPassword" required />
+              </div>
+              <button type="submit" class="btn btn-primary">Войти</button>
+              <button type="button" id="showRegisterBtn" class="btn btn-link">
+                Зарегистрироваться
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div id="registerScreen" class="screen hidden">
+          <div class="form-container">
+            <h2>Регистрация</h2>
+            <form id="registerForm">
+              <div class="form-group">
+                <label for="regName">Имя:</label>
+                <input type="text" id="regName" required />
+              </div>
+              <div class="form-group">
+                <label for="regEmail">Email:</label>
+                <input type="email" id="regEmail" required />
+              </div>
+              <div class="form-group">
+                <label for="regPassword">Пароль:</label>
+                <input type="password" id="regPassword" required />
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Зарегистрироваться
+              </button>
+              <button type="button" id="showLoginBtn" class="btn btn-link">
+                Уже есть аккаунт? Войти
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div id="productsScreen" class="screen">
+          <h2>Каталог товаров</h2>
+          <div id="productsList" class="products-grid"></div>
+        </div>
+
+        <div id="cartScreen" class="screen hidden">
+          <h2>Корзина</h2>
+          <div id="cartItems" class="cart-items"></div>
+          <div id="cartTotal" class="cart-total"></div>
+          <div class="cart-actions">
+            <button id="backToProductsBtn" class="btn btn-secondary">
+              Продолжить покупки
+            </button>
+            <button id="checkoutBtn" class="btn btn-primary">
+              Оформить заказ
+            </button>
+          </div>
+        </div>
+        <div id="checkoutScreen" class="screen hidden">
+          <h2>Оформление заказа</h2>
+          <form id="checkoutForm">
+            <div class="form-group">
+              <label for="customerName">Имя получателя:</label>
+              <input type="text" id="customerName" required />
+            </div>
+            <div class="form-group">
+              <label for="customerPhone">Телефон:</label>
+              <input type="tel" id="customerPhone" required />
+            </div>
+            <div class="form-group">
+              <label for="customerAddress">Адрес доставки:</label>
+              <textarea id="customerAddress" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="customerComment">Комментарий к заказу:</label>
+              <textarea id="customerComment"></textarea>
+            </div>
+            <div id="orderSummary" class="order-summary"></div>
+            <div class="checkout-actions">
+              <button
+                type="button"
+                id="backToCartBtn"
+                class="btn btn-secondary"
+              >
+                Назад к корзине
+              </button>
+              <button type="submit" class="btn btn-primary">
+                Подтвердить заказ
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
